@@ -1,167 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: "Andika", sans-serif;
-}
-#header{
-    background-image: url("/img/fond-rs.jpg");
-    flex-direction: row-reverse;
-    
-  }
-.slider{
-    width: 100%;
-    height: 80vh;
-    aspect-ratio: 16/9;
-    position: relative;
-}
-.slider-background{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(80%);
-}
-.slider-content{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    
-}
-h1{
-    color:rgb(87, 150, 177) ;
-    font-size: 5em;
-}
-h2{
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-}
-h3{
-    color:rgb(87, 150, 177) ;
-}
-p{
-    font-size: 1.5em;
-    line-height: 2rem;
-}
-.slider-content p{
-    font-size: 1.5em;
-    color:rgb(87, 150, 177) ;
-}
-.section{
-    padding:100px 0 ;
-}
-.boxed{
-    max-width: 1280px;
-    margin-inline: auto;
-}
-.flex{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.dark{
-    background: rgb(3, 28, 48);
-    color: rgb(87, 150, 177);
-}
-.section40{
-    width: 40%;
-}
-.section50{
-    width: 40%;
-    
-}
-.section60{
-    width: 60%;
-}
-.text-center{
-    text-align: center;
-}
-.competence25{
-    width:25% ;
-}
-.gap20{
-    gap: 20px;
-    
-}
-.skill{
-    box-sizing: border-box;
-    padding: 20px;
-    border-radius: 15px;
-    
-}
-.skill img{
-    width: 100px;
-    
-
-}
-.skill h3{
-    margin-top:10px ;
-}
-.js{
-    margin-top:-10px;
-}
-.php{
-    margin-top: 50px;
-}
-.bootstrap{
-    margin-top: 50px;
-}
-.navbar{
-    display:flex ;
-    
-}
-.container-fluid{
-    display: flex;
-    justify-content: space-around;
-}
-.fin{
-    padding: 0 35px;
-}
-.bouton{
-    background-color: rgb(3, 28, 48);
-    color: rgb(87, 150, 177);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
+  font-family: "Andika", sans-serif;
+}
+#header {
+  background-image: url("/img/fond-rs.jpg");
+  flex-direction: row-reverse;
+}
+.slider {
+  width: 100%;
+  height: 80vh;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+.slider-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%);
+}
+.slider-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+h1 {
+  color: rgb(87, 150, 177);
+  font-size: 5em;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+h3 {
+  color: rgb(87, 150, 177);
+}
+p {
+  font-size: 1.5em;
+  line-height: 2rem;
+}
+.slider-content p {
+  font-size: 1.5em;
+  color: rgb(87, 150, 177);
+}
+.section {
+  padding: 100px 0;
+}
+.boxed {
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dark {
+  background: rgb(3, 28, 48);
+  color: rgb(87, 150, 177);
+}
+.section40 {
+  width: 40%;
+}
+.section50 {
+  width: 40%;
+}
+.section60 {
+  width: 60%;
+}
+.text-center {
+  text-align: center;
+}
+.competence25 {
+  width: 25%;
+}
+.gap20 {
+  gap: 20px;
+}
+.skill {
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 15px;
+}
+.skill img {
+  width: 100px;
+}
+.skill h3 {
+  margin-top: 10px;
+}
+.js {
+  margin-top: -10px;
+}
+.php {
+  margin-top: 50px;
+}
+.bootstrap {
+  margin-top: 50px;
+}
+.navbar {
+  display: flex;
+}
+.container-fluid {
+  display: flex;
+  justify-content: space-around;
+}
+.fin {
+  padding: 0 35px;
+}
+.bouton {
+  background-color: rgb(3, 28, 48);
+  color: rgb(87, 150, 177);
+}
+body {
+  font-family: Arial, sans-serif;
 }
 
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    text-align: center;
+  max-width: 400px;
+  margin: 50px auto;
+  text-align: center;
 }
 
 h1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 10px;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 #weatherInfo {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-#weatherInfo{
-    color: rgb(87, 150, 177); ;
+#weatherInfo {
+  color: rgb(87, 150, 177);
+}
+.projet {
+  padding-top: 50px;
+  margin-left: 50px;
+}
+footer {
+  text-align: center;
+  color: rgb(87, 150, 177);
+  padding-top: 50px;
+}
+.projet img {
+  border-radius: 5em;
+}
+.navbar-brand{
+    color: rgb(87, 150, 177);
+}
+.photo img{
+margin-top: 30px;
+border-radius: 5em;
 }
