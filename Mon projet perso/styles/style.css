@@ -10,6 +10,10 @@ body {
 }
 #header {
   background-image: url("/img/fond-rs.jpg");
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: center;
+  ;
 }
 .slider {
   width: 100%;
@@ -49,6 +53,7 @@ section {
 .gap20 {
   background: rgb(3, 28, 48);
   color: rgb(87, 150, 177);
+  width: 100%;
 }
 /*skill*/
 .skill {
@@ -113,16 +118,12 @@ footer {
   text-align: center;
   color: rgb(87, 150, 177);
 }
-
-
-
 .typing-container {
   color: rgb(87, 150, 177);
 }
 .nom {
-  display: flex;
-  flex-direction: column;
-  padding-top: 200px;
+
+  padding: 100px;
 }
 span {
   color: white;
@@ -146,7 +147,6 @@ input[type="email"] {
   margin-left: 0px;
   width: 100%;
 }
-
 input[type="submit"] {
   background-color: #1255a2;
   color: white;
@@ -155,11 +155,9 @@ input[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 input[type="submit"]:hover {
   background-color: #1872d9;
 }
-
 .container-form {
   box-sizing: border-box;
   border-radius: 5px;
@@ -174,7 +172,6 @@ input[type="submit"]:hover {
   background: rgb(3, 28, 48);
   color: rgb(87, 150, 177);
 }
-
 /*chronologie dans le cv*/
 #chronologie .header,
 #chronologiePro .header {
@@ -328,9 +325,7 @@ input[type="submit"]:hover {
   border-radius: 20px;
   box-shadow: 0 0 0 3px rgba(3, 28, 48, 0.2);
 }
-
 /*experience*/
-
 #chronologiePro .timeline:before {
   content: "";
   position: absolute;
@@ -343,18 +338,22 @@ input[type="submit"]:hover {
   margin-top: 30px;
   border-radius: 5em;
 }
-#telechargementCV{
+#photoProfil{
+  width: 160px;
+  border-radius: 50%;
+  animation: none;
+ margin-top: 2em;
+ 
+
  
 }
 /*image shake*/
 img:hover {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 0.5s;
-
   /* When the animation is finished, start again */
   animation-iteration-count: infinite;
 }
-
 @keyframes shake {
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
@@ -370,4 +369,11 @@ img:hover {
 }
 #photoMarie{
   width: 300px;
+  
+}
+
+
+@media screen and (max-width: 680px) {
+#header{display: flex;flex-direction: column};
+.section40, .section50{width: 40%;}
 }

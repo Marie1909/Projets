@@ -9,10 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
-    <header id="header" class="d-flex flex-column flex-md-row-reverse text-center">
-
+    <header id="header" >
         <div id="meteoTitre">
             <h1>Météo</h1>
             <input type="text" id="cityInput" placeholder="Entrer la ville">
@@ -20,7 +18,6 @@
             <br>
             <img id="weatherIcon" class="d-none" alt="Weather Icon">
             <div id="weatherInfo"></div>
-
         </div>
         <div class="slider ">
             <nav class="navbar ">
@@ -33,6 +30,7 @@
                 </div>
             </nav>
             <div class="nom">
+                <img id="photoProfil" src="img/20240220_155455.jpg" alt="photoProfil">
                 <h1>Mon CV</h1>
             </div>
         </div>
@@ -44,7 +42,7 @@
             </div>
             <h1>Expérience professionnelle</h1>
         </div>
-        <div class="timeline">
+        <div class="timeline ">
             <ul>
                 <li>
                     <div class="content">
@@ -215,9 +213,7 @@
                 </li>
             </ul>
         </div>
-        
     </section>
-   
     <section>
         <footer class="footer">
             <label id="cv">Marie Capelle 2024</label>
@@ -229,5 +225,4 @@
         <script src="node_modules/axios/dist/axios.min.js"></script>
         <script src="js/app.js"></script>
 </body>
-
 </html>

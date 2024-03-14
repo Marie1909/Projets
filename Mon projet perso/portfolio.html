@@ -9,10 +9,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
-    <header id="header" class="d-flex flex-column flex-md-row-reverse text-center">
-
+    <header id="header" >
         <div id="meteoTitre">
             <h1>Météo</h1>
             <input type="text" id="cityInput" placeholder="Entrer la ville">
@@ -20,7 +18,6 @@
             <br>
             <img id="weatherIcon" class="d-none" alt="Weather Icon">
             <div id="weatherInfo"></div>
-
         </div>
         <div class="slider ">
             <nav class="navbar ">
@@ -33,13 +30,14 @@
                 </div>
             </nav>
             <div class="nom">
+                <img id="photoProfil" src="img/20240220_155455.jpg" alt="photoProfil">
                 <h1>Mon portfolio</h1>
             </div>
         </div>
     </header>
     <section>
-        <p class="text-center">Lien inactif pour le moment</p>
-        <div class="projet">
+        <p class="text-center flex flex-column">Lien inactif pour le moment</p>
+        <div class="projet flex flex-column col-12">
             <img src="img/Capture d'écran 2024-03-07 131029.png" alt="My yuka">
             <a href="#"></a>
             <img src="img/Capture d'écran 2024-03-13 152118.png" alt="book catalog">
@@ -50,12 +48,10 @@
         <p>Marie Capelle 2024</p>
         <a href="#header">Retour vers le haut</a>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="node_modules/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
 </body>
-
 </html>
