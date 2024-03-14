@@ -10,134 +10,72 @@ body {
 }
 #header {
   background-image: url("/img/fond-rs.jpg");
-  flex-direction: row-reverse;
 }
 .slider {
   width: 100%;
   height: 80vh;
-  aspect-ratio: 16/9;
-  position: relative;
 }
-.slider-background {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(80%);
-}
-.slider-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+/*titres*/
 h1 {
   color: rgb(87, 150, 177);
   font-size: 5em;
 }
 h2 {
+  text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 50px;
 }
 h3 {
   color: rgb(87, 150, 177);
 }
-p {
+/*paragraphe,label*/
+p,
+label {
   font-size: 1.5em;
   line-height: 2rem;
+  padding: 30px;
 }
-.slider-content p {
-  font-size: 1.5em;
-  color: rgb(87, 150, 177);
-}
-.section {
+section {
   padding: 100px 0;
-}
-.boxed {
-  max-width: 1280px;
-  margin-inline: auto;
 }
 .flex {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.dark {
-  background: rgb(3, 28, 48);
-  color: rgb(87, 150, 177);
-}
-.section40 {
-  width: 40%;
-}
+.section40,
 .section50 {
   width: 40%;
 }
-.section60 {
-  width: 60%;
-}
-.text-center {
-  text-align: center;
-}
-.competence25 {
-  width: 25%;
-}
 .gap20 {
-  gap: 20px;
+  background: rgb(3, 28, 48);
+  color: rgb(87, 150, 177);
 }
+/*skill*/
 .skill {
-  box-sizing: border-box;
   padding: 20px;
-  border-radius: 15px;
 }
 .skill img {
   width: 100px;
 }
-.skill h3 {
-  margin-top: 10px;
-}
-.js {
-  margin-top: -10px;
-}
-.php {
-  margin-top: 50px;
-}
-.bootstrap {
-  margin-top: 50px;
-}
+/*Navbar*/
 .navbar {
   display: flex;
+  margin-top: 5px;
+  margin-left: 5px;
 }
-.container-fluid {
-  display: flex;
-  justify-content: space-around;
+.navbar-brand {
+  color: rgb(87, 150, 177);
 }
-.fin {
-  padding: 0 35px;
-}
+/*boutons*/
 .bouton {
   background-color: rgb(3, 28, 48);
   color: rgb(87, 150, 177);
 }
-body {
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 20px;
-}
-
 input[type="text"] {
   width: 80%;
   padding: 10px;
   margin-bottom: 10px;
 }
-
 button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -145,33 +83,291 @@ button {
   border: none;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #0056b3;
 }
-
+/*Meteo*/
 #weatherInfo {
   margin-top: 20px;
 }
 #weatherInfo {
   color: rgb(87, 150, 177);
 }
-.projet {
-  padding-top: 50px;
-  margin-left: 50px;
+#meteoTitre{
+  margin-top: 170px;
+  margin-right: 20px;
 }
+/*Portfolio*/
+.projet {
+  display: flex;
+  justify-content: space-evenly;
+}
+.projet img {
+  border-radius: 2em ;
+  border:0.5em solid rgb(3, 28, 48);
+  width: 500px;
+  
+}
+/*Footer*/
 footer {
   text-align: center;
   color: rgb(87, 150, 177);
-  padding-top: 50px;
 }
-.projet img {
+
+
+
+.typing-container {
+  color: rgb(87, 150, 177);
+}
+.nom {
+  display: flex;
+  flex-direction: column;
+  padding-top: 200px;
+}
+span {
+  color: white;
+}
+input[type="text"],
+textarea,
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  margin-right: 0px;
+  margin-left: 0px;
+  resize: vertical;
+}
+#cv {
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+input[type="submit"] {
+  background-color: #1255a2;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #1872d9;
+}
+
+.container-form {
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+}
+#fin {
+  background: rgb(3, 28, 48);
+  color: rgb(87, 150, 177);
+}
+
+/*chronologie dans le cv*/
+#chronologie .header,
+#chronologiePro .header {
+  position: relative;
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#chronologie .header h1,
+#chronologiePro .header h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin-top: 50px;
+  text-transform: uppercase;
+}
+#chronologie .header p,
+#chronologiePro .header p {
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+  line-height: 2;
+  margin: 20px auto;
+}
+#chronologie .header p span,
+#chronologiePro .header p span {
+  font-weight: 300;
+}
+#chronologie .timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 450px;
+  background: #c5c5c5;
+}
+#chronologie .timeline,
+#chronologiePro .timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 0;
+  width: 1000px;
+}
+#chronologie .timeline ul,
+#chronologiePro .timeline ul {
+  margin: 0;
+  padding: 0;
+}
+#chronologie .timeline ul li,
+#chronologiePro .timeline ul li {
+  list-style: none;
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+#chronologie .timeline ul li:nth-child(odd):before,
+#chronologiePro .timeline ul li:nth-child(odd):before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  width: 10px;
+  height: 10px;
+  background: rgb(87, 150, 177);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(87, 150, 177, 0.2);
+}
+#chronologie .timeline ul li:nth-child(odd),
+#chronologiePro .timeline ul li:nth-child(odd) {
+  float: left;
+  text-align: right;
+  clear: both;
+}
+#chronologie .timeline ul li:nth-child(odd):hover,
+#chronologiePro .timeline ul li:nth-child(odd):hover {
+  box-shadow: -2px 2px 4px rgba(0, 0, 255, 0.2);
+}
+#chronologie .timeline ul li:nth-child(even):before,
+#chronologiePro .timeline ul li:nth-child(even):before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  background: rgb(3, 28, 48);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(3, 28, 48, 0.2);
+}
+#chronologie .timeline ul li:nth-child(even),
+#chronologiePro .timeline ul li:nth-child(even) {
+  float: right;
+  text-align: left;
+  clear: both;
+}
+#chronologie .timeline ul li:nth-child(even):hover,
+#chronologiePro .timeline ul li:nth-child(even):hover {
+  box-shadow: 2px 2px 4px rgba(0, 0, 255, 0.2);
+}
+#chronologie .timeline ul li .content,
+#chronologiePro .timeline ul li .content {
+  padding-bottom: 20px;
+}
+#chronologie .timeline ul li .content h2,
+#chronologiePro .timeline ul li .content h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: rgb(87, 150, 177);
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
+#chronologie .timeline ul li .content p,
+#chronologiePro .timeline ul li .content p {
+  margin: 10px 0 0;
+  padding: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+#chronologie .timeline ul li .time h3,
+#chronologiePro .timeline ul li .time h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+#chronologie .timeline ul li:nth-child(odd) .time,
+#chronologiePro .timeline ul li:nth-child(odd) .time {
+  position: absolute;
+  top: 12px;
+  right: -200px;
+  margin: 0;
+  padding: 8px 16px;
+  background: rgb(14, 60, 98);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 0 3px rgba(3, 28, 48, 0.2);
+}
+#chronologie .timeline ul li:nth-child(even) .time,
+#chronologiePro .timeline ul li:nth-child(even) .time {
+  position: absolute;
+  top: 12px;
+  left: -200px;
+  margin: 0;
+  padding: 8px 16px;
+  background: rgb(14, 60, 98);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 0 3px rgba(3, 28, 48, 0.2);
+}
+
+/*experience*/
+
+#chronologiePro .timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 1600px;
+  background: #c5c5c5;
+}
+.photo img {
+  margin-top: 30px;
   border-radius: 5em;
 }
-.navbar-brand{
-    color: rgb(87, 150, 177);
+#telechargementCV{
+ 
 }
-.photo img{
-margin-top: 30px;
-border-radius: 5em;
+/*image shake*/
+img:hover {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 0.5s;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+#photoMarie{
+  width: 300px;
 }
