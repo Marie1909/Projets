@@ -1,3 +1,7 @@
+<?php 
+require_once(dirname(__FILE__)  . '/conf/inc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -20,15 +24,9 @@
             <div id="weatherInfo"></div>
         </div>
         <div class="slider ">
-            <nav class="navbar ">
-                <div class="container-fluid flex-column flex-md-row">
-                    <a href="index.html" class="navbar-brand">Accueil</a>
-                    <a href="quiSuisJe.html" class="navbar-brand">Qui suis-je ?</a>
-                    <a href="cv.html" class="navbar-brand">CV</a>
-                    <a href="portfolio.html" class="navbar-brand">Portfolio</a>
-                    <a href="contact.html" class="navbar-brand">Contact</a>
-                </div>
-            </nav>
+        <?php  
+       require_once(ROOT_PATH ."/librairies/topMenu.php");
+       ?>
             <div class="nom">
                 <img id="photoProfil" src="img/20240220_155455.jpg" alt="photoProfil">
                 <h1>Qui suis-je ?</h1>
@@ -94,14 +92,8 @@
                 travail.</p>
         </div>
     </section>
-    <footer class="footer">
-        <p>Marie Capelle 2024</p>
-        <a href="#header">Retour vers le haut</a>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="node_modules/axios/dist/axios.min.js"></script>
-    <script src="js/app.js"></script>
+    <?php  
+       require_once(ROOT_PATH ."/librairies/footer.php");
+       ?>
 </body>
 </html>
