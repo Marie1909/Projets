@@ -1,108 +1,34 @@
-<?php 
-require_once(dirname(__FILE__)  . '/conf/inc.php');
+<?php
+require_once (dirname(__FILE__) . '/conf/inc.php');
+
+if(isset($_GET['controller'])) {
+
+    $_C = strtolower($_GET['controller']);
+
+    //https://blog.smarchal.com/operateur-ternaire-php
+    # condition ternaire : permet de faire un if et un else condensé
+    $_C = (isset($_C) ? $_C : 'index');
+
+    # on inclus le header par defaut
+    require_once(ROOT_PATH . '/librairies/header.php');
+
+    switch($_C) {
+        case 'index':
+        case 'contact':
+        case 'cv':
+        case 'formulaire':
+        case 'portfolio':
+        case 'who':
+            include_once(ROOT_PATH . '/controllers/' . $_C . '.php');
+        break;
+        default:
+            header('location:/index/');
+        break;
+    }
+}
+else{
+    # on inclus le header par defaut
+    require_once(ROOT_PATH . '/librairies/header.php');
+    include_once(ROOT_PATH . '/controllers/index.php');
+}
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Marie</title>
-    <meta type="description" content="Ceci est mon portfolio étudiant.">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-
-<body>
-    <header id="header" >
-        <div id="meteoTitre">
-            <h1>Météo</h1>
-            <input type="text" id="cityInput" placeholder="Entrer la ville">
-            <button id="meteo">c'est parti !</button>
-            <br>
-            <img id="weatherIcon" class="d-none" alt="Weather Icon">
-            <div id="weatherInfo"></div>
-        </div>
-        <div class="slider">
-        <?php  
-       require_once(ROOT_PATH ."/librairies/topMenu.php");
-       ?> 
-            <div  class="text-center">
-            <img id="photoProfil" src="img/20240220_155455.jpg" alt="photoProfil">
-        </div>
-            <div class="nom d-flex flex-column ">
-                
-                <h1>Marie Capelle</h1>
-                <div class="container">
-                    <div class="typing-container">
-                        <p>Je suis développeur fullstack&nbsp;<span typing-speed="70" typing-delay="1000"
-                                words="en formation,passionnée,en recherche d'alternance"></span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section >
-        <div class="aPropos">
-            <div>
-                <div>
-                    <h2>A propos de moi</h2>
-                    <p>Passionnée, créative et déterminée à explorer le vaste monde de l'informatique, je suis
-                        consciente que ce métier nécessite une formation permanente, en constante évolution. Je suis
-                        enthousiaste à l'idée de relever les défis du développement web et de poursuivre au-delà. Ma
-                        flexibilité et mon adaptabilité me permettent de m'ajuster rapidement aux nouvelles technologies
-                        et méthodes de travail.
-                        De plus, ma
-                        collaboration efficace et mon esprit d'équipe sont des atouts qui enrichissent mon parcours
-                        professionnel. Ma créativité et mon engagement envers la qualité me poussent à trouver des
-                        solutions innovantes et à produire un travail de haute qualité. Ces compétences combinées
-                        renforcent ma détermination à exceller dans le domaine du développement web.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="gap20 ">
-        <h2>Mes compétences </h2>
-        <div class="flex flex-wrap">
-            <div class="competence25 skill">
-                <img src="img/html5-logo.png" alt="logo html">
-                <a href="https://developer.mozilla.org/fr/docs/learn/html/introduction_to_html/getting_started">HTML</a>
-            </div>
-            <div class="competence25 skill">
-                <img src="img/css-3-logo.png" alt="logo css">
-                <a href="https://developer.mozilla.org/fr/docs/Web/CSS">Css</a>
-            </div>
-            <div class="competence25 skill js">
-                <img src="img/JavaScript-logo.png" alt="logo js">
-                <a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript">JavaScript</a>
-            </div>
-            <div class="competence25 skill php">
-                <img src="img/php-logo-transparent.png" alt="logo php">
-                <a href="https://www.php.net/manual/fr/intro-whatis.php">php</a>
-            </div>
-            <div class="competence25 skill bootstrap">
-                <img src="img/bootstrap-4096.png" alt="logo bootstrap">
-                <a href="https://getbootstrap.com/">Bootstrap</a>
-            </div>
-            <div class="competence25 skill bootstrap">
-                <img src="img/angular-icon-logo-png-transparent.png" alt="logo Angular">
-                <a href="https://angular.io/docs">Angular</a>
-            </div>
-            <div class="competence25 skill bootstrap">
-                <img src="img/react_logo_2.png" alt="logo React">
-                <a href="https://react.dev/">React</a>
-            </div>
-            <div class="competence25 skill bootstrap">
-                <img src="img/mysql_PNG23.png "alt="logo React">
-                <a href="https://www.mysql.com/fr/">MySQL</a>
-            </div>
-        </div>
-    </section>
-    <?php  
-       require_once(ROOT_PATH ."/librairies/footer.php");
-       ?>
-</body>
-</html>

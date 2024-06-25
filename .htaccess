@@ -1,0 +1,19 @@
+#ce fichier est lu part Apache qui permet d'effectuer differentes regles d'autorisation, de reecriture etc
+	RewriteEngine On
+
+    #le chemin du projet racine
+	RewriteBase /
+
+	#RewriteCond %{REQUEST_FILENAME} !-f
+	#RewriteCond %{REQUEST_FILENAME} !-d
+	
+	# Page :
+
+#regle d'écriture 
+# ce que tu veux | ce que tu as 
+# ce que je veux c'est une ecriture url projet.org/exemple/
+# ce que j'ai c'est dev.php?controller=exemple
+# faire la regle la plus compliqué a la plus simple
+
+RewriteRule ^([a-zA-Z0-9]+)/$ index.php?controller=$1 [L]
+RewriteRule ^([a-zA-Z0-9]+)$ index.php?controller=$1 [L]
