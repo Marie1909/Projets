@@ -1,5 +1,5 @@
 <body>
-    <header id="header" >
+    <header id="header">
         <div id="meteoTitre">
             <h1>Météo</h1>
             <input type="text" id="cityInput" placeholder="Entrer la ville">
@@ -9,9 +9,9 @@
             <div id="weatherInfo"></div>
         </div>
         <div class="slider ">
-        <?php  
-       require_once(ROOT_PATH ."/librairies/topMenu.php");
-       ?>
+            <?php
+            require_once (ROOT_PATH . "/librairies/topMenu.php");
+            ?>
             <div class="nom">
                 <img id="photoProfil" src="/img/20240220_155455.jpg" alt="photoProfil">
                 <h1>Mon portfolio</h1>
@@ -19,15 +19,30 @@
         </div>
     </header>
     <section>
-        <p class="text-center flex flex-column">Lien inactif pour le moment</p>
-        <div class="projet flex flex-column col-12">
-            
-            <a href="https://google.fr" target="_blank"><img src="/img/Capture d'écran 2024-03-07 131029.png" alt="My yuka"></a>
-            <a href="#"><img src="/img/Capture d'écran 2024-03-13 152118.png" alt="book catalog"></a>
+
+        <div class="card" style="width: 18rem;">
+            <a href="http://myyuka/" target="_blank">
+                <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-07 131029.png" alt="My yuka">
+            </a>
+            <div class="card-body">
+                <p class="card-text">Projet de la formation. Utilisation des langages HTML, CSS et TypeScript, de la librairie Bootstrap, du framework Angular ainsi que de l'API du site OpenFoodFact.</p>
+            </div>
         </div>
+
+        <div class="card" style="width: 18rem;">
+            <a href="http://book/" target="_blank">
+                <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-13 152118.png" alt="book catalog">
+            </a>
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+            </div>
+        </div>
+
     </section>
-    <?php  
-       require_once(ROOT_PATH ."/librairies/footer.php");
-       ?>
+    <?php
+    require_once (ROOT_PATH . "/librairies/footer.php");
+    ?>
 </body>
+
 </html>

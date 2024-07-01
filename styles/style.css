@@ -348,7 +348,7 @@ input[type="submit"]:hover {
  
 }
 /*image shake*/
-img:hover {
+section img:not(.cancel):hover {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: shake 0.5s;
   /* When the animation is finished, start again */
@@ -371,6 +371,7 @@ img:hover {
   width: 300px;
   
 }
+
 
 
 @media screen and (max-width: 680px) {
