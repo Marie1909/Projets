@@ -20,22 +20,21 @@
     </header>
     <section>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card" >
             <a href="http://myyuka/" target="_blank">
                 <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-07 131029.png" alt="My yuka">
             </a>
             <div class="card-body">
-                <p class="card-text">Projet de la formation. Utilisation des langages HTML, CSS et TypeScript, de la librairie Bootstrap, du framework Angular ainsi que de l'API du site OpenFoodFact.</p>
+                <p class="card-text">Projet utilisant les langages HTML, CSS et TypeScript, de la librairie Bootstrap, du framework Angular ainsi que de l'API du site OpenFoodFact.</p>
             </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card" >
             <a href="http://book/" target="_blank">
                 <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-13 152118.png" alt="book catalog">
             </a>
             <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
+                <p class="card-text">Pojet utilisant les langages HTML, CSS, JavaScript et une API fourni books.json</p>
             </div>
         </div>
 

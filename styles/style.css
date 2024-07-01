@@ -91,6 +91,16 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+.card{
+  padding: 10px;
+  margin: 10px;
+  width: 30rem;
+  border-radius: 10%;
+  display: inline-block;
+}
+
+
 /*Meteo*/
 #weatherInfo {
   margin-top: 20px;
