@@ -1,5 +1,5 @@
 <body>
-    <header id="header" >
+    <header id="header">
         <div id="meteoTitre">
             <h1>Météo</h1>
             <input type="text" id="cityInput" placeholder="Entrer la ville">
@@ -9,14 +9,14 @@
             <div id="weatherInfo"></div>
         </div>
         <div class="slider">
-        <?php  
-       require_once(ROOT_PATH ."/librairies/topMenu.php");
-       ?> 
-            <div  class="text-center">
-            <img id="photoProfil" src="/img/20240220_155455.jpg" alt="photoProfil">
-        </div>
+            <?php
+            require_once (ROOT_PATH . "/librairies/topMenu.php");
+            ?>
+            <div class="text-center">
+                <img id="photoProfil" src="/img/20240220_155455.jpg" alt="photoProfil">
+            </div>
             <div class="nom d-flex flex-column ">
-                
+
                 <h1>Marie Capelle</h1>
                 <div class="container">
                     <div class="typing-container">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </header>
-    <section >
+    <section>
         <div class="aPropos">
             <div>
                 <div>
@@ -51,41 +51,58 @@
         <h2>Mes compétences </h2>
         <div class="flex flex-wrap">
             <div class="competence25 skill">
-                <img src="/img/html5-logo.png" alt="logo html">
-                <a href="https://developer.mozilla.org/fr/docs/learn/html/introduction_to_html/getting_started">HTML</a>
+
+                <a href="https://developer.mozilla.org/fr/docs/learn/html/introduction_to_html/getting_started">
+                    <img src="/img/html5-logo.png" alt="logo html">
+                </a>
             </div>
             <div class="competence25 skill">
-                <img src="/img/css-3-logo.png" alt="logo css">
-                <a href="https://developer.mozilla.org/fr/docs/Web/CSS">Css</a>
+
+                <a href="https://developer.mozilla.org/fr/docs/Web/CSS">
+                    <img src="/img/css-3-logo.png" alt="logo css">
+                </a>
             </div>
             <div class="competence25 skill js">
-                <img src="/img/JavaScript-logo.png" alt="logo js">
-                <a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript">JavaScript</a>
+
+                <a href="https://developer.mozilla.org/fr/docs/Learn/JavaScript">
+                    <img src="/img/JavaScript-logo.png" alt="logo js">
+                </a>
             </div>
             <div class="competence25 skill php">
-                <img src="/img/php-logo-transparent.png" alt="logo php">
-                <a href="https://www.php.net/manual/fr/intro-whatis.php">php</a>
+
+                <a href="https://www.php.net/manual/fr/intro-whatis.php">
+                    <img src="/img/php-logo-transparent.png" alt="logo php">
+                </a>
             </div>
             <div class="competence25 skill bootstrap">
-                <img src="/img/bootstrap-4096.png" alt="logo bootstrap">
-                <a href="https://getbootstrap.com/">Bootstrap</a>
+
+                <a href="https://getbootstrap.com/">
+                    <img src="/img/bootstrap-4096.png" alt="logo bootstrap">
+                </a>
             </div>
             <div class="competence25 skill bootstrap">
-                <img src="/img/angular-icon-logo-png-transparent.png" alt="logo Angular">
-                <a href="https://angular.io/docs">Angular</a>
+
+                <a href="https://angular.io/docs">
+                    <img src="/img/angular-icon-logo-png-transparent.png" alt="logo Angular">
+                </a>
             </div>
             <div class="competence25 skill bootstrap">
-                <img src="/img/react_logo_2.png" alt="logo React">
-                <a href="https://react.dev/">React</a>
+
+                <a href="https://react.dev/">
+                    <img src="/img/react_logo_2.png" alt="logo React">
+                </a>
             </div>
             <div class="competence25 skill bootstrap">
-                <img src="/img/mysql_PNG23.png "alt="logo React">
-                <a href="https://www.mysql.com/fr/">MySQL</a>
+
+                <a href="https://www.mysql.com/fr/">
+                    <img src="/img/mysql_PNG23.png " alt="logo React">
+                </a>
             </div>
         </div>
     </section>
-    <?php  
-       require_once(ROOT_PATH ."/librairies/footer.php");
-       ?>
+    <?php
+    require_once (ROOT_PATH . "/librairies/footer.php");
+    ?>
 </body>
+
 </html>

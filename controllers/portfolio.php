@@ -22,8 +22,8 @@
         <p class="text-center flex flex-column">Lien inactif pour le moment</p>
         <div class="projet flex flex-column col-12">
             
-            <a href="https://google.fr" target="_blank"><img src="img/Capture d'écran 2024-03-07 131029.png" alt="My yuka"></a>
-            <a href="#"><img src="img/Capture d'écran 2024-03-13 152118.png" alt="book catalog"></a>
+            <a href="https://google.fr" target="_blank"><img src="/img/Capture d'écran 2024-03-07 131029.png" alt="My yuka"></a>
+            <a href="#"><img src="/img/Capture d'écran 2024-03-13 152118.png" alt="book catalog"></a>
         </div>
     </section>
     <?php  

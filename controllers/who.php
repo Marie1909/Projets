@@ -71,7 +71,7 @@
     </section>
     <section id="fin">
         <div class="flex flex-wrap col-12 ">
-            <img src="img/rqth.jpg" alt="logo rqth">
+            <img src="/img/rqth.jpg" alt="logo rqth">
             <p class="col-12 text-center">J'ai une reconnaissance de travailleur handicapé, mais cela ne m'a jamais empêchée d'être investie dans
                 mon
                 travail.</p>
