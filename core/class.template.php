@@ -16,17 +16,12 @@
 		public function __construct($core,$name = null,$theme_dir = null, $directory = null) {
 
 			$this->core = $core;
-			$this->OS = substr(php_uname('s'), 0, 3);;
+			$this->OS = substr(php_uname('s'), 0, 3);
 			
 			$this->name = (is_null($name)) ? self::TEMPLATE_name : $name;
 			$this->theme_dir = (is_null($theme_dir)) ? self::THEME_DIR : $theme_dir;
 			
-			if ($this->OS == "Win") {
-				$this->directory = (is_null($directory)) ? sprintf('%s\%s', ROOT_PATH, $this->theme_dir) : sprintf('%s\%s', ROOT_PATH, $directory);
-			}
-			else {
-				$this->directory = (is_null($directory)) ? sprintf('%s/%s', ROOT_PATH, $this->theme_dir) : sprintf('%s/%s', ROOT_PATH, $directory);
-			}
+			$this->directory = $this->convert((is_null($directory)) ? sprintf('%s/%s', ROOT_PATH, $this->theme_dir) : sprintf('%s/%s', ROOT_PATH, $directory));
 		}
 		
 		public function setCore($core) {
@@ -39,25 +34,15 @@
 
 		private function load() {
 			
-			if ($this->OS == "Win") {
-				$root = sprintf("%s\%s\%s\%s\%s.%s",
-					$this->directory, 
-					$this->name, 
-					'templates',
-					$this->core,
-					$this->filename, 
-					self::EXTENSION_TEMPLATE);
-			}else{
-				$root = sprintf("%s/%s/%s/%s/%s.%s",
-					$this->directory, 
-					$this->name, 
-					'templates',
-					$this->core,
-					$this->filename, 
-					self::EXTENSION_TEMPLATE);
-			}
 
-				
+		$root = $this->convert(sprintf("%s\%s\%s\%s\%s.%s",
+			$this->directory, 
+			$this->name, 
+			'templates',
+			$this->core,
+			$this->filename, 
+			self::EXTENSION_TEMPLATE));
+			
 			var_dump($root);
 			return @file_get_contents($root);
 		}
@@ -82,11 +67,41 @@
 		}
 		
 		public function display($filename, $aParser) {
-			$this->filename = $filename;
-			
+			$this->filename = $this->convert($filename);
+
+			// DIRECTORY_SEPARATOR
 			$this->aParser = $aParser;
 
 			return $this->parse($this->load(), $this->aParser);
+		}
+		
+		private function convert($text) {
+			if ($this->OS == "Win") {
+				if (preg_match("#/#m",$text)) {
+					$patterns = array();
+					$patterns[0] = "#/#";
+					$replacements = array();
+					$replacements[2] = '\\';
+					return preg_replace($patterns, $replacements, $text);
+				}
+				else 
+				{
+					return $text;
+				}
+			}
+			else{
+				if (preg_match("#\\\\#m",$text)) {
+					$patterns = array();
+					$patterns[0] = "#\\\\#";
+					$replacements = array();
+					$replacements[2] = '/';
+					return preg_replace($patterns, $replacements, $text);
+				}
+				else 
+				{
+					return $text;
+				}
+			}
 		}
 	}
 ?>

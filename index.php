@@ -20,6 +20,7 @@ if(isset($_GET['controller'])) {
         case 'formulaire':
         case 'portfolio':
         case 'who':
+        case 'exemple':
             include_once(ROOT_PATH . '/controllers/' . $_C . '.php');
         break;
         default:
