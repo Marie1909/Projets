@@ -19,26 +19,61 @@
         </div>
     </header>
     <section>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        My Yuka
 
-        <div class="card" >
-            <a href="http://myyuka/" target="_blank">
-                <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-07 131029.png" alt="My yuka">
-            </a>
-            <div class="card-body">
-                <p class="card-text">Projet utilisant les langages HTML, CSS et TypeScript, de la librairie Bootstrap, du framework Angular ainsi que de l'API du site OpenFoodFact.</p>
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Projet utilisant les langages HTML, CSS et TypeScript, de la librairie
+                        Bootstrap, du framework Angular ainsi que de l'API du site OpenFoodFact. <br>
+                        <a href="http://myyuka/" target="_blank">
+                            My Yuka
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="card" >
-            <a href="http://book/" target="_blank">
-                <img class="cancel , card-img-top" src="/img/Capture d'écran 2024-03-13 152118.png" alt="book catalog">
-            </a>
-            <div class="card-body">
-                <p class="card-text">Pojet utilisant les langages HTML, CSS, JavaScript et une API fourni books.json</p>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Books
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Projet utilisant les langages HTML, CSS, JavaScript et une API fourni
+                        books.json. <br>
+                        <a href="http://book/" target="_blank">
+                            Books
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
+                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
+                        exciting happening here in terms of content, but just filling up the space to make it look, at
+                        least at first glance, a bit more representative of how this would look in a real-world
+                        application.</div>
+                </div>
             </div>
         </div>
 
     </section>
+
+
     <?php
     require_once (ROOT_PATH . "/librairies/footer.php");
     ?>

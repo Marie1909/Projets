@@ -388,3 +388,8 @@ section img:not(.cancel):hover {
 #header{display: flex;flex-direction: column};
 .section40, .section50{width: 40%;}
 }
+
+#carouselExampleCaptions {
+  height: 500px;
+  width: 100%;
+}

@@ -1,4 +1,5 @@
 <?php
+session_start();
 #permet d'activé l'apercu d'erreurs dans le code
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

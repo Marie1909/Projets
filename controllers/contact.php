@@ -39,24 +39,32 @@
 		// ou alors avec un délai de réponse, et dans le cas contraire si pas de réponse au bout de 1 semaine, bah le formulaire est à nouveau accessible.
 		
 		if(!$_RESULT) {
-			
+
 		?>
          <section>
         <div class="container-form">
+			<?php
+				if(isset($_SESSION['ERROR'])) {
+					
+					echo $_SESSION['ERROR'];
+					unset($_SESSION);
+					session_destroy();
+				}
+?>
             <h1>Formulaire de contact</h1>
 		<form id="form" method="POST" action="/formulaire/">
 			<!-- ---------------------------- -->
 			<label for="fname">Nom & prénom</label>
-			<input type="text" id="fname" name="fname" placeholder="Votre nom et prénom"><br />
+			<input type="text" id="fname" name="fname" placeholder="Votre nom et prénom" required><br />
 			<!-- ---------------------------- -->
 			<label for="subject">Sujet</label>
-			<input type="text" id="subject" name="subject" placeholder="L'objet de votre message"><br />
+			<input type="text" id="subject" name="subject" placeholder="L'objet de votre message" required><br />
 			<!-- ---------------------------- -->
 			<label for="mail">Email</label>
-			<input id="mail" type="text" name="mail" placeholder="Votre email"><br />
+			<input id="mail" type="text" name="mail" placeholder="Votre email" required><br />
 			<!-- ---------------------------- -->
 			<label for="content">Message</label>
-			<textarea id="content" name="content" placeholder="Votre message" style="height:200px"></textarea><br />
+			<textarea id="content" name="content" placeholder="Votre message" style="height:200px" required></textarea><br />
 			<!-- ---------------------------- -->
 			<input id="bouton" type="submit" value="Envoyer" name="save"><br />
 		</form>
