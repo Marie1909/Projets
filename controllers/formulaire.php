@@ -10,16 +10,23 @@
 # sur ton bouton "envoyer" j'ai défini un name : <input id="bouton" type="submit" value="Envoyer" name="save">
 # il va me permettre de vérifier si le bouton a été cliqué , qu'elle existe, si le bouton n'est pas cliquer la variable du formulaire
 # ne peut pas exister CQFD
-
+$_ERROR = '';
 // bouton cliqué (puisque isset verifie si la variable existe)
 if(isset($_POST['save'])) {
 	
 	// bon on va faire basique mais en gros en temps normal , il faut faire la verification si l'adresse mail est bonne 
 	// comme ceci : 
-	/*if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
+	if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
     // invalid emailaddress
+		$_ERROR = 'adresse mail invalide';
 	}
-	*/
+
+	if(empty($_POST['fname']) ||
+	empty($_POST['subject']) ||
+	empty($_POST['mail'])||
+	empty($_POST['content'])) {
+		$_ERROR = 'valeur vide';
+	}
 	
 	// par contre on va verifier quand même l'existance des variables et des valeurs envoyés
 	// la c'est une condition avec && (AND) donc il faut que toutes les conditions soient rempli pour passer dans le IF sinon ....
@@ -49,14 +56,23 @@ if(isset($_POST['save'])) {
 		
 		
 		// on execute la requete, si c'est ok bah on va refaire venir la personne sur le formulaire
-		if($_QUERY->execute($_DATA)) {
-			header('location:/contact/');
+		if($_ERROR == '') {
+			if($_QUERY->execute($_DATA)) {
+				header('location:/contact/');
+			}
+			else { // la ca veut dire que ton enregistrement c'est mal effectué
+				
+			}
 		}
-		else { // la ca veut dire que ton enregistrement c'est mal effectué
-			
+		else{
+			$_SESSION['ERROR'] = $_ERROR;
+			header('location:/contact/');
 		}
 	}
 	else {
+		$_ERROR = 'il manque des variables';
+		$_SESSION['ERROR'] = $_ERROR;
+		header('location:/contact/');
 		// souci : il y a des variables manquante !
 		// peut etre indiquer une erreur , je sais pas ^^
 	}
