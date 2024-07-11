@@ -1,5 +1,10 @@
 <?php
 require_once (dirname(__FILE__) . '/conf/inc.php');
+require_once (dirname(__FILE__) . '/core/class.template.php');
+
+# on inclus le header par defaut
+$template = new template('');
+$parser = array();
 
 if(isset($_GET['controller'])) {
 
@@ -9,9 +14,13 @@ if(isset($_GET['controller'])) {
     # condition ternaire : permet de faire un if et un else condensé
     $_C = (isset($_C) ? $_C : 'index');
 
-    # on inclus le header par defaut
-    require_once(ROOT_PATH . '/librairies/header.php');
+	$parser['title'] = $_C;
 
+	$parser['_HEADER'] = $template->display("header",$parser);
+	$parser['_TOPMENU'] = $template->display("topMenu",$parser);
+	$parser['_FOOTER'] = $template->display("footer",$parser);
+	
+	
     switch($_C) {
         case 'index':
         case 'contact':
@@ -19,6 +28,7 @@ if(isset($_GET['controller'])) {
         case 'formulaire':
         case 'portfolio':
         case 'who':
+        case 'exemple':
             include_once(ROOT_PATH . '/controllers/' . $_C . '.php');
         break;
         default:
@@ -27,8 +37,13 @@ if(isset($_GET['controller'])) {
     }
 }
 else{
+	
+	$parser['title'] = 'index';
+
+	$parser['_HEADER'] = $template->display("header",$parser);
+	$parser['_TOPMENU'] = $template->display("topMenu",$parser);
+	$parser['_FOOTER'] = $template->display("footer",$parser);
     # on inclus le header par defaut
-    require_once(ROOT_PATH . '/librairies/header.php');
     include_once(ROOT_PATH . '/controllers/index.php');
 }
 ?>
