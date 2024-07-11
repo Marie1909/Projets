@@ -21,6 +21,7 @@ $_RESULT = $_QUERY->fetch(PDO::FETCH_ASSOC);
 
 if(!$_RESULT) {
 	
+	var_dump($_SESSION);
 	if(isset($_SESSION['ERROR'])) {
 		$parser['class'] = 'warning';
 		$parser['content'] = $_SESSION['ERROR'];
@@ -33,7 +34,7 @@ if(!$_RESULT) {
 }
 else{
 	$parser['class'] = 'success';
-	$parser['content'] = '';
+	$parser['content'] = 'Votre demande est en cours de traitement';
 	$parser['_FORMULAIRE'] = $template->display("message",$parser);
 }
 

@@ -46,7 +46,11 @@
 			$this->filename, 
 			self::EXTENSION_TEMPLATE));
 			
-			var_dump($root);
+			if(defined('DEBUG')) {
+				if(DEBUG == true) {
+					var_dump($root);
+				}
+			}
 			return @file_get_contents($root);
 		}
 		
