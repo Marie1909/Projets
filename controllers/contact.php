@@ -20,8 +20,7 @@ $_RESULT = $_QUERY->fetch(PDO::FETCH_ASSOC);
 // ou alors avec un délai de réponse, et dans le cas contraire si pas de réponse au bout de 1 semaine, bah le formulaire est à nouveau accessible.
 
 if(!$_RESULT) {
-	
-	var_dump($_SESSION);
+
 	if(isset($_SESSION['ERROR'])) {
 		$parser['class'] = 'warning';
 		$parser['content'] = $_SESSION['ERROR'];
