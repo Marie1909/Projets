@@ -34,8 +34,11 @@
 
 		private function load() {
 			
+		if($this->core != '') {
+			$this->core = "\\" . $this->core;
+		}
 
-		$root = $this->convert(sprintf("%s\%s\%s\%s\%s.%s",
+		$root = $this->convert(sprintf("%s\%s\%s%s\%s.%s",
 			$this->directory, 
 			$this->name, 
 			'templates',
