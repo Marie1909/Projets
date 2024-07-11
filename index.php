@@ -1,7 +1,9 @@
 <?php
 require_once (dirname(__FILE__) . '/conf/inc.php');
-require_once (dirname(__FILE__) . '/core/class.template.php');
+require_once (ROOT_PATH . '/lang/fr.php');
+require_once (ROOT_PATH . '/core/class.template.php');
 
+var_dump($_SERVER);
 # on inclus le header par defaut
 $template = new template('');
 $parser = array();
@@ -14,7 +16,7 @@ if(isset($_GET['controller'])) {
     # condition ternaire : permet de faire un if et un else condensé
     $_C = (isset($_C) ? $_C : 'index');
 
-	$parser['title'] = $_C;
+	$parser['title'] = $_LANG['title_'.$_C];
 
 	$parser['_HEADER'] = $template->display("header",$parser);
 	$parser['_TOPMENU'] = $template->display("topMenu",$parser);
@@ -38,7 +40,7 @@ if(isset($_GET['controller'])) {
 }
 else{
 	
-	$parser['title'] = 'index';
+	$parser['title'] = $_LANG['title_index'];
 
 	$parser['_HEADER'] = $template->display("header",$parser);
 	$parser['_TOPMENU'] = $template->display("topMenu",$parser);
