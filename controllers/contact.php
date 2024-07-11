@@ -37,45 +37,58 @@
 		// si il n'y a pas de résultat alors on affiche le formulaire
 		// bien sur on pourrai aller plus loin, en disant que si tu l'as consulté, dans ce cas, il a à nouveau accés au formulaire.
 		// ou alors avec un délai de réponse, et dans le cas contraire si pas de réponse au bout de 1 semaine, bah le formulaire est à nouveau accessible.
-		
 		if(!$_RESULT) {
 
 		?>
          <section>
-        <div class="container-form">
+        <div class="container text-center">
+			<div class="row">
+				<div class="col-lg-3">&nbsp;</div>
+				<div class="col-lg-6"> 
+				<?php
+					if(isset($_SESSION['ERROR'])) {
+						
+						$_HTML  = '<div class="alert alert-warning" role="alert">';
+						$_HTML .= $_SESSION['ERROR'];
+						$_HTML .='</div>';
+						
+						echo $_HTML;
+						unset($_SESSION);
+						session_destroy();
+					}
+	?>
+			<h1>Formulaire de contact</h1>
+			<form id="form" method="POST" action="/formulaire/">
+				<!-- ---------------------------- -->
+				<label for="fname">Nom & prénom</label>
+				<input type="text" id="fname" name="fname" placeholder="Votre nom et prénom" required><br />
+				<!-- ---------------------------- -->
+				<label for="subject">Sujet</label>
+				<input type="text" id="subject" name="subject" placeholder="L'objet de votre message" required><br />
+				<!-- ---------------------------- -->
+				<label for="mail">Email</label>
+				<input id="mail" type="text" name="mail" placeholder="Votre email" required><br />
+				<!-- ---------------------------- -->
+				<label for="content">Message</label>
+				<textarea id="content" name="content" placeholder="Votre message" style="height:200px" required></textarea><br />
+				<!-- ---------------------------- -->
+				<input id="bouton" type="submit" value="Envoyer" name="save"><br />
+			</form>
 			<?php
-				if(isset($_SESSION['ERROR'])) {
-					
-					echo $_SESSION['ERROR'];
-					unset($_SESSION);
-					session_destroy();
-				}
-?>
-            <h1>Formulaire de contact</h1>
-		<form id="form" method="POST" action="/formulaire/">
-			<!-- ---------------------------- -->
-			<label for="fname">Nom & prénom</label>
-			<input type="text" id="fname" name="fname" placeholder="Votre nom et prénom" required><br />
-			<!-- ---------------------------- -->
-			<label for="subject">Sujet</label>
-			<input type="text" id="subject" name="subject" placeholder="L'objet de votre message" required><br />
-			<!-- ---------------------------- -->
-			<label for="mail">Email</label>
-			<input id="mail" type="text" name="mail" placeholder="Votre email" required><br />
-			<!-- ---------------------------- -->
-			<label for="content">Message</label>
-			<textarea id="content" name="content" placeholder="Votre message" style="height:200px" required></textarea><br />
-			<!-- ---------------------------- -->
-			<input id="bouton" type="submit" value="Envoyer" name="save"><br />
-		</form>
-        </div>
+			}
+			else {
+				$_HTML  = '<div class="alert alert-success" role="alert">';
+				$_HTML .= "Votre demande est en cours de traitement";
+				$_HTML .='</div>';
+				
+				echo $_HTML;
+			}
+			?>
+				</div>
+				<div class="col-lg-3">&nbsp;</div>
+			</div>
+		</div>
         </section>
-		<?php
-		}
-		else {
-			echo "Votre demande est en cours de traitement";
-		}
-		?>
 <?php  
        require_once(ROOT_PATH ."/librairies/footer.php");
        ?>
