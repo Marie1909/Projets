@@ -23,19 +23,17 @@ if(isset($_GET['controller'])) {
 	$parser['_FOOTER'] = $template->display("footer",$parser);
 	
 	
-    switch($_C) {
-        case 'index':
-        case 'contact':
-        case 'cv':
-        case 'formulaire':
-        case 'portfolio':
-        case 'who':
-        case 'exemple':
-            include_once(ROOT_PATH . '/controllers/' . $_C . '.php');
-        break;
-        default:
-            header('location:/index/');
-        break;
+	$_PATH_CONTROLLER = ROOT_PATH . '/controllers/';
+ 
+    $files = scandir($_PATH_CONTROLLER);
+ 
+    foreach($files as $file){
+        if($file != '.' and $file != '..') {
+            $page = strtolower(strtr($file,array('.php' => '')));
+            if($_C == $page) {
+                include_once(ROOT_PATH . '/controllers/' . $file);
+            }
+        }
     }
 }
 else{
