@@ -2,11 +2,12 @@
 require_once (dirname(__FILE__) . '/conf/inc.php');
 require_once (ROOT_PATH . '/lang/fr.php');
 require_once (ROOT_PATH . '/core/class.template.php');
+require_once (ROOT_PATH . '/core/class.crypt.php');
 
-var_dump($_SERVER);
 # on inclus le header par defaut
 $template = new template('');
 $parser = array();
+$parser = $_LANG;
 
 if(isset($_GET['controller'])) {
 
@@ -17,6 +18,7 @@ if(isset($_GET['controller'])) {
     $_C = (isset($_C) ? $_C : 'index');
 
 	$parser['title'] = $_LANG['title_'.$_C];
+	$parser['current_year'] = date('Y');
 
 	$parser['_HEADER'] = $template->display("header",$parser);
 	$parser['_TOPMENU'] = $template->display("topMenu",$parser);

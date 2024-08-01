@@ -6,6 +6,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL); // tout type d'erreur
 
 //on defini des constants de connexion à la BDD
+define('TOKEN','7mgF3bS9g3g7qCPmTH37');
 define('DEBUG',false);
 define('ROOT_PATH',dirname(dirname(__FILE__)));
 define('DB_HOST','localhost');
