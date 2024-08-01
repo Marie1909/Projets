@@ -1,6 +1,8 @@
 <?php
 $template = new template('consultations');
 
+//--------------------------------------------------------------------------
+//SECTION LOGIN 
 if(isset($_POST['action'])) {
 
     $_REQ = "SELECT * FROM users WHERE user_login = ? AND user_password = ?";
@@ -18,6 +20,19 @@ if(isset($_POST['action'])) {
     else{ //c'est ok !
         $_SESSION['user'] = $_RESULT;
     }
+}
+
+//--------------------------------------------------------------------------
+//SECTION CONSULTATION
+if(isset($_SESSION['user'])) {
+    $_REQ = "SELECT * FROM consultations ORDER BY consultation_date_add DESC";
+    $_QUERY = $_PDO['DB_WRITE']->prepare($_REQ);
+
+    $_DATA = array();
+    $_QUERY->execute($_DATA);
+
+    $_RESULT = $_QUERY->fetchAll(PDO::FETCH_ASSOC);
+
 }
 
 # premier parametre : nom de ton fichier à charger
